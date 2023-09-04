@@ -1,0 +1,12 @@
+import { MigrationInterface, QueryRunner } from "typeorm"
+
+export class MigrationName1691893508109 implements MigrationInterface {
+
+    public async up(queryRunner: QueryRunner): Promise<void> {
+        "CREATE Table...Alter table... Insert,Select... vc que decide ;3"
+    }
+
+    public async down(queryRunner: QueryRunner): Promise<void> {
+    }
+
+}

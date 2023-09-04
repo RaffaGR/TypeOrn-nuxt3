@@ -1,0 +1,33 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "typeormAntigo": "typeorm-ts-node-commonjs",
+    "generate-migrations": "typeorm migration:generate --name NomeDaMigracao --all",
+    "typeorm": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli -d ormconfig.ts",
+    "migration:create": "babel-preset-env ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli migration:create ./src/migrations/$npm_config_name",
+    "migration:generate": "babel-node npm run typeorm -- migration:generate ./src/migrations/$npm_config_name",
+    "migration:run": "npm run build && npm run typeorm -- migration:run",
+    "migration:revert": "npm run typeorm -- migration:revert"
+  },
+  "devDependencies": {
+    "@nuxt/devtools": "^0.8.0",
+    "@nuxtjs/axios": "^5.13.6",
+    "@nuxtjs/tailwindcss": "^6.8.0",
+    "@types/node": "^18.17.3",
+    "mysql2": "^3.6.0",
+    "nuxt": "^3.6.5",
+    "ts-node": "^10.9.1",
+    "typeorm": "^0.3.17",
+    "typescript": "^5.1.6"
+  },
+  "dependencies": {
+    "reflect-metadata": "^0.1.13",
+    "vue": "^3.3.4"
+  }
+}
